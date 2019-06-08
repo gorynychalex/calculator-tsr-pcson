@@ -27,3 +27,8 @@ yarn run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### My project created
+```
+/home/gorynych/.config/yarn/global/node_modules/@vue/cli/bin/vue.js create calc-tsr
+```
