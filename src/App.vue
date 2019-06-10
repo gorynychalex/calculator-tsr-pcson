@@ -69,19 +69,23 @@ export default {
   },
   methods: {
     setEq(item) {
+
       this.form.equipment = this.equipments[this.equipments.findIndex(x=>x.id == item)]
       this.calculate()
       },
     setDays(item){
+      // console.log("this.form.days = " + item)
       this.form.days = item
       this.calculate()
     },
     setPriv(item){
+
       this.form.priv = privileges[item]
       this.calculate()
     },
     calculate(){
-      if(this.form.equipment) {
+
+      if(this.form.equipment.price) {
         this.form.sum = this.form.priv.id == 0 || this.form.priv == null ? (this.form.days * this.form.equipment.price) : (this.form.days * this.form.equipment.price) / 2
       }
     },
