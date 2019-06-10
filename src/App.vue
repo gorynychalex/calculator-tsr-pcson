@@ -17,14 +17,14 @@
       <Privileges :privileges="privileges" @pickedOpt="setPriv($event)"/>
 
       <div id="app-sum">
-      <b-input-group id="cost-sum" size="lg" prepend="Сумма, руб." append=".00">
-        <b-form-input v-model="form.sum"></b-form-input>
+      <b-input-group id="cost-sum" size="lg" prepend="Сумма" append="руб.">
+        <b-form-input v-model="form.sum" class="bg-success text-center text-light font-weight-bold" disabled></b-form-input>
       </b-input-group>
       Selected: {{ form.selected ? form.selected.name : null }}, Days: {{ form.days }}, Privileges: {{ form.priv ? form.priv.title : "Без льгот" }}
       </div>
 
       <b-input-group id="phone" prepend="Телефон: " class="mt-3">
-        <b-form-input v-model="form.phone" id="phonenum" placeholder="8(xxx)xxx-xx-xx"></b-form-input>
+        <b-form-input v-model="form.phone" id="phonenum" placeholder="8(xxx)xxx-xx-xx" required></b-form-input>
         <b-input-group-append>
           <b-button type="submit" variant="outline-success">Отправить заявку</b-button>
         </b-input-group-append>
@@ -63,7 +63,7 @@ export default {
         days: 0,
         priv: privileges[0],
         sum: 0,
-        phone: 8000000000
+        phone: ''
       }
     }
   },
