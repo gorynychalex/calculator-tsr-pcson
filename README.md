@@ -32,3 +32,22 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ```
 /home/gorynych/.config/yarn/global/node_modules/@vue/cli/bin/vue.js create calc-tsr
 ```
+
+### Deploy App
+See [Docker (Nginx)](https://cli.vuejs.org/guide/deployment.html#docker-nginx)
+
+```
+docker build . -t calctsr-pcson
+```
+
+```
+scp calctsr-pcson.tar <host>:/home/gorynych/
+```
+
+```
+docker load -i calctsr-pcson.tar 
+```
+
+```
+docker run -d -p 8090:80 calctsr-pcson
+```
